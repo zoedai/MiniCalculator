@@ -29,8 +29,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        ArrayAdapter<String> numAdapter = new ArrayAdapter<String>(this,
+        ArrayAdapter<String> numAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, btn_num);
+
 
         GridView btnGrid = (GridView) findViewById(R.id.btn_num);
         btnGrid.setNumColumns(3);
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ArrayAdapter<String> opAdapter = new ArrayAdapter<String>(this,
+        ArrayAdapter<String> opAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, btn_op);
         GridView opGrid = (GridView) findViewById(R.id.btn_op);
         opGrid.setNumColumns(2);
