@@ -138,7 +138,15 @@ public class MainActivity extends AppCompatActivity {
         String currText = screen2.getText().toString();
 
         // if no right hand operand, use the left hand operand
-        opRight = currText.length() > 0 ? Double.parseDouble(currText) : opLeft;
+        if (currText.length() != 0) {
+            if (currText.charAt(currText.length()-1) == '.') {
+                currText += '0';
+            }
+            opRight = Double.parseDouble(currText);
+        } else {
+            opRight = opLeft;
+        }
+
 
 
         if (op == 2) {
@@ -148,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
         } else if (op == 4) {
             result = opLeft * opRight;
         } else if (op == 5) {
-            result = opLeft == 0 ? 0 : opLeft / opRight;
+            result = opRight == 0 ? 0 : opLeft / opRight;
         } else {
             result = opLeft % opRight;
         }
